@@ -49,8 +49,8 @@ export default class News extends Component {
   }
 
   fetchMoreData = async () => {
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=923b81ef33964a0f8ce79f4c570464f3&page= ${this.state.page +1}&pageSize=${this.props.pageSize}`;
     this.setState({ page: this.state.page + 1 });
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=923b81ef33964a0f8ce79f4c570464f3&page= ${this.state.page}&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
@@ -62,7 +62,7 @@ export default class News extends Component {
     return (
       <>
         <div className="container my-3">
-          <h2>{`TrueFeed - Top ${this.capitalizeFirstLetter(
+          <h2 style={{marginTop: '80px', marginBottom: '10px', textAlign: 'center'}}>{`TrueFeed - Top ${this.capitalizeFirstLetter(
             this.props.category
           )} Headlines`}</h2>
           {this.state.loading && <Loading />}
