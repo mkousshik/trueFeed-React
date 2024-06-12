@@ -5,7 +5,7 @@ export default class NewsItem extends Component {
       this.props;
     return (
       <div className="card my-3">
-        <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '20%'}}>
+        <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '20%'}}>
           {source}
         </span>
         <img
@@ -19,7 +19,6 @@ export default class NewsItem extends Component {
         />
 
         <div className="card-body">
-          {console.log("aa")}
           <h5 className="card-title">{title ? title.slice(0, 45) : title} </h5>
           <p className="card-text">
             {description ? description.slice(0, 88) : description}
